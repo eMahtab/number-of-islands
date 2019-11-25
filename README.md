@@ -38,10 +38,10 @@ public static int traverseIsland(char[][] grid, int row, int column){
         //Setting the land to '0'
         grid[row][column] = '0';
     
-        traverseIsland(grid, row, column+1);
-        traverseIsland(grid, row, column-1);
-        traverseIsland(grid, row+1, column);
-        traverseIsland(grid, row-1, column);
+        traverseIsland(grid, row, column+1); // right cell
+        traverseIsland(grid, row, column-1); // left cell
+        traverseIsland(grid, row+1, column); // bottom cell
+        traverseIsland(grid, row-1, column); // top cell
         
         
         return 1;
