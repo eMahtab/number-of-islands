@@ -48,7 +48,8 @@ public static int traverseIsland(char[][] grid, int row, int column){
     }
 ```
 
-### When we can only move horizontally (left, right) and vertically (top, down)
+### Case 1 : When we can only move horizontally (left, right) and vertically (top, down)
+e.g. below matrix have total 5 islands (note that we can only move horizontally and vertically and not diagonally)
 ![When we can move to only right left](right-left-top-down.PNG?raw=true "Title")
 
 
