@@ -6,7 +6,7 @@ If the cell represents water we will just return 0; otherwise If the cell repres
 
 This way we will be able to traverse the one entire island and at the end we return 1.
 
-```
+```java
     public static int numIslands(char[][] grid) {
         // To handle null or empty grid input
         if(grid == null || grid.length == 0){
