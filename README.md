@@ -53,4 +53,29 @@ public static int traverseIsland(char[][] grid, int row, int column){
 
 
 ### When we can move horizontally (left, right), vertically (top, down) and diagonally (top-right, bottom-left, bottom-right, top-left)
+
+```java
+  public static int traverseIsland(char[][] grid, int row, int column){
+        if(row < 0 || row >= grid.length || column < 0 || column >= grid[0].length ||
+                grid[row][column] == '0'){
+            return 0;
+        }
+        //Setting the land to '0'
+        grid[row][column] = '0';
+    
+        traverseIsland(grid, row, column+1); // right cell
+        traverseIsland(grid, row, column-1); // left cell
+        traverseIsland(grid, row+1, column); // top cell
+        traverseIsland(grid, row-1, column); // bottom cell
+        
+        traverseIsland(grid, row-1, column+1); // diagonally : top-right cell
+        traverseIsland(grid, row+1, column-1); // diagonally : bottom-left cell
+        traverseIsland(grid, row+1, column+1); // diagonally : bottom-right cell
+        traverseIsland(grid, row-1, column-1); // diagonally : top-left cell
+        
+        
+        return 1;
+    }
+```
+
 ![When we can move to only right left and diagonally](right-left-top-down-diagonal.PNG?raw=true "Title")
