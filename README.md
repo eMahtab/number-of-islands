@@ -4,7 +4,7 @@ The idea is to use DFS to traverse all the cells one by one, and then recursivel
 
 If the cell represents water we will just return 0; otherwise If the cell represents a land, then we will mark it water (so that we don't traverse that cell again) and then traverse its neighbours. 
 
-This way we will be able to traverse the one entire island and at the end we return 1.
+This way we will be able to traverse the one entire island and at the end we return 1 for one single island.
 
 ```java
     public static int numIslands(char[][] grid) {
@@ -26,6 +26,25 @@ This way we will be able to traverse the one entire island and at the end we ret
         }
         return islands;
         
+    }
+```
+
+```java
+public static int traverseIsland(char[][] grid, int row, int column){
+        if(row < 0 || row >= grid.length || column < 0 || column >= grid[0].length ||
+                grid[row][column] == '0'){
+            return 0;
+        }
+        //Setting the land to '0'
+        grid[row][column] = '0';
+    
+        traverseIsland(grid, row, column+1);
+        traverseIsland(grid, row, column-1);
+        traverseIsland(grid, row+1, column);
+        traverseIsland(grid, row-1, column);
+        
+        
+        return 1;
     }
 ```
 
