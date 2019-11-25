@@ -49,11 +49,11 @@ public static int traverseIsland(char[][] grid, int row, int column){
 ```
 
 ### Case 1 : When we can only move horizontally (left, right) and vertically (top, down)
-e.g. below matrix have total 9 islands (note that we can only move horizontally, vertically and not diagonally)
+e.g. below 10*10 matrix have total 9 islands (note that we can only move horizontally, vertically and not diagonally)
 ![When we can move to only right left](right-left-top-down.PNG?raw=true "Title")
 
 
-### When we can move horizontally (left, right), vertically (top, down) and diagonally (top-right, bottom-left, bottom-right, top-left)
+### Case 2 : When we can move horizontally (left, right), vertically (top, down) and diagonally (top-right, bottom-left, bottom-right, top-left)
 
 ```java
   public static int traverseIsland(char[][] grid, int row, int column){
@@ -78,5 +78,5 @@ e.g. below matrix have total 9 islands (note that we can only move horizontally,
         return 1;
     }
 ```
-e.g. below matrix have total 5 islands (since we can move horizontally, vertically and diagonally)
+e.g. below 10*10 matrix have total 5 islands (since we can move horizontally, vertically and diagonally)
 ![When we can move to only right left and diagonally](right-left-top-down-diagonal.PNG?raw=true "Title")
