@@ -79,4 +79,4 @@ e.g. below 10*10 matrix have total 9 islands (note that we can only move horizon
     }
 ```
 e.g. below 10*10 matrix have total 5 islands (since we can move horizontally, vertically and diagonally)
-![When we can move to only right left and diagonally](right-left-top-down-diagonal.PNG?raw=true "Title")
+![When we can move horizontally, vertically and diagonally](right-left-top-down-diagonal.PNG?raw=true "Title")
