@@ -6,6 +6,10 @@ If the cell represents water we will immediately return 0; otherwise If the cell
 
 This way we will be able to traverse the one entire island and at the end we return 1 for one single island.
 
+### Case 1 : When we can only move horizontally (left, right) and vertically (top, down)
+e.g. below 10*10 matrix have total 9 islands (note that we can only move horizontally, vertically and not diagonally)
+![When we can move to only right left](right-left-top-down.PNG?raw=true "Title")
+
 ```java
     public static int numIslands(char[][] grid) {
         // To handle null or empty grid input
@@ -47,10 +51,6 @@ public static int traverseIsland(char[][] grid, int row, int column){
         return 1;
     }
 ```
-
-### Case 1 : When we can only move horizontally (left, right) and vertically (top, down)
-e.g. below 10*10 matrix have total 9 islands (note that we can only move horizontally, vertically and not diagonally)
-![When we can move to only right left](right-left-top-down.PNG?raw=true "Title")
 
 
 ### Case 2 : When we can move horizontally (left, right), vertically (top, down) and diagonally (top-right, bottom-left, bottom-right, top-left)
