@@ -1,5 +1,29 @@
 # Number Of Islands
 
+Given a 2d grid map of '1's (land) and '0's (water), count the number of islands. An island is surrounded by water and is formed by connecting adjacent lands horizontally or vertically. You may assume all four edges of the grid are all surrounded by water.
+
+```
+Example 1:
+
+Input:
+11110
+11010
+11000
+00000
+
+Output: 1
+
+Example 2:
+
+Input:
+11000
+11000
+00100
+00011
+
+Output: 3
+```
+
 The idea is to use DFS to traverse all the cells one by one, and while traversing each cell, recursively traversing all the neighboring cells from that cell.
 
 If the cell represents water we will immediately return 0; otherwise If the cell represents a land, then we will mark it water (so that we don't traverse that cell again) and then traverse all its neighbours.
