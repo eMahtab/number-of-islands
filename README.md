@@ -106,3 +106,7 @@ public static void traverseIsland(char[][] grid, int row, int column){
 ```
 e.g. below 10*10 matrix have total 5 islands (since we can move horizontally, vertically and diagonally)
 ![When we can move horizontally, vertically and diagonally](right-left-top-down-diagonal.PNG?raw=true "Title")
+
+
+## References :
+https://www.youtube.com/watch?v=o8S2bO3pmO4
