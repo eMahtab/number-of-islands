@@ -77,8 +77,10 @@ public static int traverseIsland(char[][] grid, int row, int column){
     }
 ```
 
-One very important thing to note is in the `traverseIsland` method we are setting the current cell to '0' 
-`grid[row][column] = '0';` before traversing its neighbours, If we do that after calling the `traverseIsland` on the neighbouring cells, it can result in infinite recursion and that will result in `StackOverflowError`
+
+**One very important thing to note is in the `traverseIsland` method we are setting the current cell to '0' 
+`grid[row][column] = '0';` before traversing its neighbours, If we do that after calling the `traverseIsland` on the neighbouring cells, it can result in infinite recursion and that will result in `StackOverflowError`**
+
 
 ### Case 2 : When we can move horizontally (left, right), vertically (top, down) and diagonally (top-right, bottom-left, bottom-right, top-left)
 
