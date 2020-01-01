@@ -25,11 +25,11 @@ Input:
 Output: 3
 ```
 
-The idea is to use DFS to traverse all the cells one by one, and while traversing each cell, recursively traversing all the neighboring cells from that cell.
+The idea is to use DFS to traverse all the cells one by one, and while traversing each cell, recursively traversing all the neighbouring cells from that cell.
 
-If the cell represents water we will immediately return 0; otherwise If the cell represents a land, then we will mark it water (so that we don't traverse that cell again) and then traverse all its neighbours.
+If the cell represents water we will immediately return; otherwise If the cell represents a land, then we will mark it water (so that we don't traverse that cell again) and then traverse all its neighbours.
 
-This way we will be able to traverse the one entire island and at the end we return 1 for one single island.
+This way we will be able to traverse the one entire island.
 
 ### Case 1 : When we can only move horizontally (left, right) and vertically (top, down)
 e.g. below 10*10 matrix have total 9 islands (note that we can only move horizontally, vertically and not diagonally)
@@ -49,7 +49,8 @@ e.g. below 10*10 matrix have total 9 islands (note that we can only move horizon
         for(int i = 0; i < rows; i++){
             for(int j = 0; j < columns; j++){
                 if(grid[i][j] == '1'){
-                    islands += traverseIsland(grid, i, j);
+                    islands++;
+                    traverseIsland(grid, i, j);
                 }
             }
         }
@@ -59,10 +60,10 @@ e.g. below 10*10 matrix have total 9 islands (note that we can only move horizon
 ```
 
 ```java
-public static int traverseIsland(char[][] grid, int row, int column){
+public static void traverseIsland(char[][] grid, int row, int column){
         if(row < 0 || row >= grid.length || column < 0 || column >= grid[0].length ||
                 grid[row][column] == '0'){
-            return 0;
+            return;
         }
         //Setting the land to '0'
         grid[row][column] = '0';
@@ -71,10 +72,7 @@ public static int traverseIsland(char[][] grid, int row, int column){
         traverseIsland(grid, row, column-1); // left cell
         traverseIsland(grid, row+1, column); // bottom cell
         traverseIsland(grid, row-1, column); // top cell
-        
-        
-        return 1;
-    }
+}
 ```
 
 
@@ -85,10 +83,10 @@ public static int traverseIsland(char[][] grid, int row, int column){
 ### Case 2 : When we can move horizontally (left, right), vertically (top, down) and diagonally (top-right, bottom-left, bottom-right, top-left)
 
 ```java
-  public static int traverseIsland(char[][] grid, int row, int column){
+  public static void traverseIsland(char[][] grid, int row, int column){
         if(row < 0 || row >= grid.length || column < 0 || column >= grid[0].length ||
                 grid[row][column] == '0'){
-            return 0;
+            return;
         }
         //Setting the land to '0'
         grid[row][column] = '0';
@@ -102,10 +100,7 @@ public static int traverseIsland(char[][] grid, int row, int column){
         traverseIsland(grid, row+1, column-1); // diagonally : bottom-left cell
         traverseIsland(grid, row+1, column+1); // diagonally : bottom-right cell
         traverseIsland(grid, row-1, column-1); // diagonally : top-left cell
-        
-        
-        return 1;
-    }
+ }
 ```
 e.g. below 10*10 matrix have total 5 islands (since we can move horizontally, vertically and diagonally)
 ![When we can move horizontally, vertically and diagonally](right-left-top-down-diagonal.PNG?raw=true "Title")
