@@ -15,7 +15,8 @@ public class NumberOfIslands {
         for(int i = 0; i < rows; i++){
             for(int j = 0; j < columns; j++){
                 if(grid[i][j] == '1'){
-                    islands += traverseIsland(grid, i, j);
+                	islands++;
+                    traverseIsland(grid, i, j);
                 }
             }
         }
@@ -23,10 +24,10 @@ public class NumberOfIslands {
         
     }
     
-    public static int traverseIsland(char[][] grid, int row, int column){
+    public static void traverseIsland(char[][] grid, int row, int column){
         if(row < 0 || row >= grid.length || column < 0 || column >= grid[0].length ||
                 grid[row][column] == '0'){
-            return 0;
+            return;
         }
         //Setting the land to '0'
         grid[row][column] = '0';
@@ -36,8 +37,6 @@ public class NumberOfIslands {
         traverseIsland(grid, row+1, column);
         traverseIsland(grid, row-1, column);
         
-        
-        return 1;
     }
 
 }
