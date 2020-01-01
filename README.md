@@ -25,6 +25,8 @@ Input:
 Output: 3
 ```
 
+## Approach :
+
 The idea is to use DFS to traverse all the cells one by one, and while traversing each cell, recursively traversing all the neighbouring cells from that cell.
 
 If the cell represents water we will immediately return; otherwise If the cell represents a land, then we will mark it water (so that we don't traverse that cell again) and then traverse all its neighbours.
