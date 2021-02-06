@@ -25,7 +25,7 @@ Input:
 Output: 3
 ```
 
-## Approach : DFS
+## Approach 1 : DFS
 
 The idea is to use DFS to traverse all the cells one by one, and while traversing each cell, recursively traversing all the neighbouring cells from that cell.
 
@@ -108,7 +108,7 @@ e.g. below 10*10 matrix have total 5 islands (since we can move horizontally, ve
 ![When we can move horizontally, vertically and diagonally](right-left-top-down-diagonal.PNG?raw=true "Title")
 
 
-## BFS 
+## Approach 2 : BFS 
 
 ```java
 class Solution {
@@ -146,5 +146,6 @@ class Solution {
 ```
 
 ## References :
-https://www.youtube.com/watch?v=o8S2bO3pmO4
-https://www.youtube.com/watch?v=HS7t2i9ldmE
+1. https://www.youtube.com/watch?v=o8S2bO3pmO4
+
+2. https://www.youtube.com/watch?v=HS7t2i9ldmE
