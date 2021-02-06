@@ -25,7 +25,7 @@ Input:
 Output: 3
 ```
 
-## Approach :
+## Approach : DFS
 
 The idea is to use DFS to traverse all the cells one by one, and while traversing each cell, recursively traversing all the neighbouring cells from that cell.
 
@@ -108,5 +108,43 @@ e.g. below 10*10 matrix have total 5 islands (since we can move horizontally, ve
 ![When we can move horizontally, vertically and diagonally](right-left-top-down-diagonal.PNG?raw=true "Title")
 
 
+## BFS 
+
+```java
+class Solution {
+    public int numIslands(char[][] grid) {
+        if(grid == null || grid.length == 0)
+            return 0;
+        
+        int islands = 0;
+        Queue<int[]> q = new LinkedList<>();
+        int[][] directions = {{0, 1} , {0, -1} , {-1, 0} , {1, 0}};
+        for(int i = 0; i < grid.length; i++) {
+            for(int j = 0; j < grid[0].length; j++) {
+                if(grid[i][j] == '1') {
+                    grid[i][j] = '0';
+                    islands++;
+                    q.add(new int[]{i,j});
+                    while(!q.isEmpty()) {
+                        int[] pos = q.remove();
+                        for(int[] direction : directions) {
+                            int row = pos[0] + direction[0];
+                            int col = pos[1] + direction[1];
+                            if(row >= 0 && row < grid.length && col >= 0 
+                               && col < grid[0].length && grid[row][col] == '1' ) {
+                                q.add(new int[]{row, col});
+                                grid[row][col] = '0';
+                            }
+                        }
+                    }
+                }
+            }
+        }
+       return islands; 
+    }
+}
+```
+
 ## References :
 https://www.youtube.com/watch?v=o8S2bO3pmO4
+https://www.youtube.com/watch?v=HS7t2i9ldmE
