@@ -108,6 +108,13 @@ e.g. below 10*10 matrix have total 5 islands (since we can move horizontally, ve
 ![When we can move horizontally, vertically and diagonally](right-left-top-down-diagonal.PNG?raw=true "Title")
 
 
+## Complexity Analysis : DFS Approach
+```
+Time complexity : O(M×N) where M is the number of rows and N is the number of columns.
+
+Space complexity : worst case O(M×N) in case that the grid map is filled with lands where DFS goes by M×N deep.
+```
+
 ## Approach 2 : BFS 
 
 ```java
